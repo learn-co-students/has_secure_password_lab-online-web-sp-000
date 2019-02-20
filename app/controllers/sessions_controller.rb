@@ -15,5 +15,11 @@ class SessionsController < ApplicationController
     redirect_to controller: 'welcome', action: 'home'
   end
 
-  
+  def destory
+    session.delete :user_id
+
+    redirect_to '/'
+  end
+
+
 end
