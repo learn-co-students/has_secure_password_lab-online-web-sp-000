@@ -19,7 +19,7 @@ Users should not be able to log in if they enter an incorrect password. Just red
 
 1. Create a User model and migrations.
 
-2. Create a Users controller. It should respond to `new` with the signup form, and respond to `create` by creating a new user.
+2. Create a Users controller. It should respond to `new` with the signup form , and respond to `create` by creating a new user.
 
 3. Create a Sessions controller and the appropriate actions.
 
