@@ -3,13 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:name])
-    if user && user.authenticate(params[:name])
-     session[:user_id] = params[:user_id]
-     redirect_to '/users/welcome'
+    user = User.find_by(name: params[:user][:name])
+    if user.try(:authenticate, params[:user][:password])
+     session[:user_id] = user.id
+     redirect_to '/welcome/home'
     else
       redirect_to '/login'
-   end
+    end 
   end
 
   def destroy
