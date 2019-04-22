@@ -1,0 +1,8 @@
+<h2>Enter Your Login information:</h2>
+<%= form_for :user, url: '/login' do |f|%>
+  <%= f.label :name, "Enter User Name:" %>
+  <%= f.text_field :name %><br>
+  <%= f.label :password, "Enter Password:" %>
+  <%= f.password_field :password %><br>
+  <%= f.submit "Submit" %>
+<% end %>
