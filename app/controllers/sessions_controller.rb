@@ -6,10 +6,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: user_params[:name])
     if @user.authenticate(user_params[:password])
       session[:user_id] = @user.id
-      redirect_to '/'
-    else
-      redirect_to '/'
     end
+    
+    redirect_to '/'
   end
 
   def destroy
