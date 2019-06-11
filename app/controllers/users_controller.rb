@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to controller: 'wellcome', action: 'homepage'
     else
-      return redirect_to controller: 'users', action: 'new'
+      redirect_to controller: 'users', action: 'new'
     end
   end
 
