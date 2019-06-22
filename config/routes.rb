@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
 
 get '/users/new', to: "users#new"
-post '/users', to: "sessions#create"
+post '/users', to: "users#create"
+
+get '/login', to: "sessions#new"
+post '/login', to: "sessions#create"
+post '/logout', to: "sessions#destroy"
 
 end
