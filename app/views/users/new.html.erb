@@ -1,0 +1,27 @@
+<h1>Create a new user!</h1>
+
+<%= form_for @user, :url => show_path %>
+
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div><br>
+
+  <div>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div><br>
+
+  <div>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div><br>
+
+  <div>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div><br>
+
+  <%= f.submit %>
+
+<% end %>
