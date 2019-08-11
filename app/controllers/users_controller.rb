@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    def welcome
+    def show
         @user = User.find(session[:user_id])
     end
     
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       if params[:user][:password] == params[:user][:password_confirmation]
         user = User.create(user_params)
         session[:user_id] = user.id
+        redirect_to user_path(user)
       else
         redirect_to new_user_path
       end
