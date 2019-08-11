@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
-  let(:steven) {{name: 'Steven',
+  let(:steven) {{username: 'Steven',
             password: 'un1verse',
             password_confirmation: 'un1verse'}}
 
   describe 'create' do
     it "creates a new user" do
       post :create, params: { user: steven }
-      expect(User.last.name).to eq('Steven')
+      expect(User.last.username).to eq('Steven')
     end
 
     it "logs you in" do
