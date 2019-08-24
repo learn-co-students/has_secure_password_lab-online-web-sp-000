@@ -6,7 +6,7 @@ We're going to make a Rails app that covers a simple authentication flow: users 
 
 ## Introduction
 
-Our app has three pages:
+Our app has thre pages:
   1. A signup page, where the user enters their username, password, and password confirmation.
   2. A login page, where the user submits their username and password and are logged in.
   3. A user homepage, which says, "Hi, #{username}."
