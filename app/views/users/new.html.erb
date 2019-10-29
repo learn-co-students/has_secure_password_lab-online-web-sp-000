@@ -1,0 +1,11 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+<%= form_for(@user) do |f| %>
+  <%= f.text_field :name, :placeholder => "enter your name" %> <br><br>
+  <%= f.text_field :password, :placeholder => "enter your password" %> <br><br>
+  <%= f.text_field :password_confirmation, :placeholder => "re-enter your password" %> <br><br>
+  <%= f.submit %>
+<% end %>
+
+
