@@ -4,7 +4,7 @@ RSpec.describe SessionsController, type: :controller do
 
   before do
     User.destroy_all
-  en
+  end
 
   let(:connie) {User.create(name: 'Connie', password: 'M4heswaran')}
 
