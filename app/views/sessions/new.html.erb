@@ -1,10 +1,30 @@
 
 <%= flash[:alert] if flash[:alert] %>
-<%= form_tag sessions_path do |form| %>
+
+<!-- <%= form_tag sessions_path do |form| %>
   <%= label_tag :"user[:name]" %>
   <%= text_field_tag :"user[:name]" %>
 
   <%= label_tag :"user[:password]" %>
   <%= password_field_tag :"user[:password]" %>
   <%= submit_tag 'Login' %>
+<% end %>
+
+the above code works, but when using form_for tag like below, set the url to specific path in your routes,
+
+
+<%= form_for @user, url: login_path, method: :post do |f| %>
+... if such a path exists.
+-->
+
+
+
+<%= form_for @user, url: url_for(controller: 'sessions', action: 'create'), method: :post do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "log in" %>
 <% end %>
