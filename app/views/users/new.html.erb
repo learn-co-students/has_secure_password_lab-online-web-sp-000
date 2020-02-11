@@ -1,0 +1,8 @@
+#sign up page
+<%= form_for :user, url: '/users', action: 'post' do |f| %>
+  Username: <%= f.text_field :name %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+<% end %>
+  
