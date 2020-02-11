@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bcrypt'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
@@ -42,6 +44,7 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.7'
   gem 'capybara'
+
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views
