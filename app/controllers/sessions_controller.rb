@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         @user = user.try(:authenticate, params[:user][:password])
         return head(:forbidden) unless @user
         session[:user_id] = @user.id
-        redirect_to :'/users/show'
+        redirect_to '/users/show'
     end
     
 end
