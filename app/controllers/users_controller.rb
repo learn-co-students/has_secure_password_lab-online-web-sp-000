@@ -18,3 +18,6 @@ class UsersController < ApplicationController
         params.require(:user).permit(:name, :password, :password_confirmation)
      end
 end
+
+
+#simple- find, create- can use in controller, save complex queries for model 
