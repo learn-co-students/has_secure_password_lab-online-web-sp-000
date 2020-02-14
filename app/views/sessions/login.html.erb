@@ -1,0 +1,7 @@
+<h1>Login</h1>
+
+<%= form_for @user, action="/login" method: post do |f| %>
+    Name: <%= f.text_field :name %>
+    Password: <%= f.password_field :password %>
+    Please confirm password: <%= f.password_field :password_confirmation %>
+<% end %>
