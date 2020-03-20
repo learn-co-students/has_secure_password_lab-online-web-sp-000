@@ -1,15 +1,20 @@
 class UsersController < ApplicationController
-  #accepts_nested_attributes
 
   def create
-    #binding.pry
-    #User.create(user_params)
+    @user = User.new(user_params)
+    if @user.authenticate
+      @user.save
+      session[:user_id] = @user.id
+    else
+      redirect_to controller: 'users', action: 'new'
+    end
   end
 
   def new
   end
 
-  def welcome
+  def homepage
+    @user = User.find_by(id: session[:user_id])
   end
 
 private
