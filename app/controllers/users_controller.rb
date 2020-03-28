@@ -3,7 +3,11 @@ class UsersController < ApplicationController
     end
   
     def create
-      @user = User.create(user_params)
+        #creates a new user
+        #logs you in
+        #sets your password if the confirmation matches
+        #redirects you if your password and confirmation don't match
+      @user = User.new(user_params)
       return redirect_to controller: 'users', action: 'new' unless @user.save
       session[:user_id] = @user.id
       redirect_to controller: 'welcome', action: 'home'
