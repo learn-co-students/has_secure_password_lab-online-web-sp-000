@@ -1,0 +1,13 @@
+<h1>Hello, please sign up by entering you name and a password.</h1>
+<%= form_for(@user) do |f| %>
+  <%= f.label :name, "Enter your name:" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password, "Please create a password" %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Please retype your password." %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "Sign up" %>
+<% end %>
