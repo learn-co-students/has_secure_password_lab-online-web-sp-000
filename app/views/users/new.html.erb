@@ -1,0 +1,13 @@
+<h1>Sign Up</h1>
+<% if flash[:alert] %>
+    <p><%= flash[:alert] %></p>
+<% end %>
+<%= form_tag '/signup' do %>
+    <label for="name">Name</label>
+    <%= text_field_tag :name %><br><br>
+    <label for="password">Password</label>
+    <%= password_field_tag :password %><br><br>
+    <label for="password_confirmation">Password Confirmation</label>
+    <%= password_field_tag :password_confirmation %><br><br>
+    <%= submit_tag "Signup" %>
+<% end %>
