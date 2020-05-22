@@ -1,0 +1,4 @@
+<h1>Hi <%= current_user_name %></h1>
+<%= form_tag '/logout', method: :post do %>
+ <%= submit_tag "Logout" %>
+<% end %>
