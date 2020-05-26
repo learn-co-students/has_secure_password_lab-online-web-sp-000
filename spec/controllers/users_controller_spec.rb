@@ -1,23 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-
-  let(:steven) {{name: 'Steven',
-            password: 'un1verse',
-            password_confirmation: 'un1verse'}}
+  let(:steven) do
+    { name: 'Steven',
+      password: 'un1verse',
+      password_confirmation: 'un1verse' }
+  end
 
   describe 'create' do
-    it "creates a new user" do
+    it 'creates a new user' do
       post :create, params: { user: steven }
       expect(User.last.name).to eq('Steven')
     end
 
-    it "logs you in" do
+    it 'logs you in' do
       post :create, params: { user: steven }
       expect(session[:user_id]).to eq(User.last.id)
     end
 
-    it "sets your password if the confirmation matches" do
+    it 'sets your password if the confirmation matches' do
       post :create, params: { user: steven }
       expect(User.last.authenticate(steven[:password])).to eq(User.last)
     end
