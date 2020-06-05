@@ -1,0 +1,14 @@
+<h1>Welcome to the Cool App</h1>
+<h2>Start by making an account...</h2>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :name, "Your Name:" %>
+  <%= f.text_field :name %><br/><br/>
+
+  <%= f.label :password%>
+  <%= f.password_field :password %><br/><br/>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br/><br/>
+  <%= f.submit :submit %>
+<% end %>
