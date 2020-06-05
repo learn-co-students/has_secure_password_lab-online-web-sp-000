@@ -1,0 +1,13 @@
+<h1>Welcome back to the Cool App</h1>
+<h2>Login Below</h2>
+
+<%= form_for(@user, url: post_login_path) do |f| %>
+  <%= f.label :name, "Your Name:" %>
+  <%= f.text_field :name %><br/><br/>
+
+  <%= f.label :password%>
+  <%= f.password_field :password %><br/><br/>
+
+  <%= f.submit :submit %>
+<% end %>
+
