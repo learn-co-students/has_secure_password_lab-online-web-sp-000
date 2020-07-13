@@ -5,10 +5,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:name])
-    return head(:forbidden) unless @user.authenticate(params[:password])
+    @user = User.find_by(name: params[:user][:name])
+    return head(:forbidden) unless @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-    end
+      redirect_to controller: 'users', action: 'welcome'
   end
-  
+
+#this destroy method is not routed, but good to have as realistic ref 
+  # def destroy
+  #   session.delete :user_id
+  #   redirect_to '/'
+  # end
+
 end
