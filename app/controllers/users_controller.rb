@@ -1,10 +1,24 @@
 class UsersController < ApplicationController
+
+  def welcome
+    # @user = User.find_by(name: params[:name])
+  end
+
   def new
   end
 
   def create
-    User.create(user_params)
+
+    if params[:user][:name].present? && params[:user][:password] == params[:user][:password_confirmation]
+      user = User.create(user_params)
+      session[:user_id] = user.id
+      redirect_to controller: 'users', action: 'welcome'      
+    else
+      redirect_to controller: 'users', action: 'new'
+    end
   end
+
+ 
 
   private
  
