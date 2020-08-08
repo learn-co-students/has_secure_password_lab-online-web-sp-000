@@ -1,0 +1,17 @@
+<%= form_for :user do |f| %>
+  <p>Username: <%= f.text_field :name %></p>
+  <p>Password: <%= f.password_field :password %></p>
+  <p>Password Confirmation: <%= f.password_field :password_confirmation %></p>
+  <%= f.submit 'Submit' %>
+<% end %>
+
+
+<!-- W
+User
+  has a password field
+  has a name field
+  has a password confirmation field
+  is valid if password and password_confirmation match
+  is valid if password is set and password_confirmation is nil
+  is invalid if password and password_confirmation are both non-nil and don't match
+  
