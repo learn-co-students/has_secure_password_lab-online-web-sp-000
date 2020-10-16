@@ -1,0 +1,8 @@
+<h1>Please Log In</h1>
+<%=form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do%>
+  <label for="user[name]">User Name</label>
+  <input type="text", id="user[name]", name="user[name]", placeholder= "name">
+  <label for="user[password]">Password</label>
+  <input type="text", id="user[password]"name="user[password]", placeholder= "password">
+  <%= submit_tag "Login", 'data-disable-with' => "Please wait.." %>
+<%end%>

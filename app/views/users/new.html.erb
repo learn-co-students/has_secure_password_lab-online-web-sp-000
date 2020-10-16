@@ -1,0 +1,19 @@
+<% if @user.errors%>
+  <%@user.errors.full_messages.each do |m|%>
+    <%=m%>
+  <%end%>
+<% end %>
+
+<h1>Please sign up</h1>
+<%=form_for @user do |f|%>
+  <%=f.label :name%>
+  <%=f.text_field :name, placeholder: "name"%>
+  <br>
+  <%=f.label :password%>
+  <%=f.password_field :password, placeholder: "password"%>
+  <br>
+  <%=f.label :password_confirmation%>
+  <%=f.password_field :password_confirmation, placeholder: "confirm your password"%> 
+  <br>
+  <%=f.submit%>
+<%end%>
