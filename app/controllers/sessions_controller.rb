@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
 
+    def new 
+
+    end
+
     def create 
         @user = User.find_by(name: params[:user][:name])
-        #did we find someone & did they put in the right password?
-        #if @user && @user.authenticate(params[:user][:password])
-  
-        if @user && @user.authenticate(password: params[:user][:password])
+        if @user && @user.try(:authenticate, params[:user][:password])
           session[:user_id] = @user.id
           redirect_to user_path(@user)
         else
