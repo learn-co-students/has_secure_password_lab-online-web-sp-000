@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:name])
+    # @user = User.find_by(name: params[:name])
     if params[:password].blank?
       redirect_to '/login'
     else 
