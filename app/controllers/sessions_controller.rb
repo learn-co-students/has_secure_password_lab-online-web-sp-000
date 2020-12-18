@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # @user = User.find_by(name: params[:name])
-    if params[:password].blank?
-      redirect_to '/login'
-    else 
-      session[:user_id] = user.id
-      redirect_to '/'
+    @user = User.find_by(name: params[:name])
+    if params[:password] == params[:password_confirmation]
+      session[:user_id] = params[:id]
+      redirect_to '/users/show'
+    else
+      redirect_to '/users/new'
     end
   end
+ 
 end
