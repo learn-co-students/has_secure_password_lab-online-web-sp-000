@@ -3,13 +3,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:name])
-    if params[:password] == params[:password_confirmation]
-      session[:user_id] = params[:id]
-      redirect_to '/users/show'
-    else
-      redirect_to '/users/new'
-    end
+    @user = User.find_by(name: params[:user][:name])
+    @user = @user.try(:authenticate, params[:user][:password])
+    return redirect_to(controller: 'sessions', action: 'new') unless @user
+    session[:user_id] = @user.id
+    redirect_to '/login'
   end
  
 end
