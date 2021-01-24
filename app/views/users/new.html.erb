@@ -1,0 +1,8 @@
+<p> Welcome, please signup.</p>
+
+<%= form_for :user do |f| %>
+  Name: <%= f.text_field :name %> <br>
+  Password: <%= f.password_field :password_digest %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %><br>
+  <%= f.submit "Submit" %>
+<% end %>
