@@ -1,0 +1,5 @@
+<%= form_tag("/sessions", method: "post") do %>
+Enter your name: <%= text_field_tag :'user[name]' %>
+Enter your password: <%= password_field_tag :'user[password]' %>
+<%= submit_tag "Login" %>
+<% end %>
