@@ -10,13 +10,13 @@ class UsersController < ApplicationController
     if user_params[:password] == user_params[:password_confirmation]
       @user.save
       session[:user_id] = @user.id
-      redirect_to users_path
+      redirect_to homepage_path
     else
       redirect_to new_user_path
     end
   end
 
-  def index
+  def homepage
   end
 
   private

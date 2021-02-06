@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user
       if @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        redirect_to users_path
+        redirect_to homepage_path
       else 
         redirect_to new_user_path
       end
