@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
 
     def new
@@ -12,6 +13,10 @@ class UsersController < ApplicationController
         else
             redirect_to :new_user
         end
+    end
+
+    def welcome
+        @user = current_user
     end
 
     private
