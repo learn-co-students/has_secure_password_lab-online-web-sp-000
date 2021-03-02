@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
       user = user.try(:authenticate, params[:user][:password])
 
-    return head(:forbidden) unless @user.authenticate(params[:password])
+  #  return head(:forbidden) unless @user.authenticate(params[:password])
 
     session[:user_id] = @user.id
     @user = user
