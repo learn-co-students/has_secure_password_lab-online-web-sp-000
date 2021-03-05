@@ -9,6 +9,7 @@ RSpec.describe UsersController, type: :controller do
   describe 'create' do
     it "creates a new user" do
       post :create, params: { user: steven }
+      # require 'pry'; binding.pry
       expect(User.last.name).to eq('Steven')
     end
 
