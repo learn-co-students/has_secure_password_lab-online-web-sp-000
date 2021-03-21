@@ -29,7 +29,7 @@ RSpec.describe User, type: :model do
     user = User.new
     user.password = 'foo'
     user.password_confirmation = 'fo0'
-    expect(user.valid?).to be false
+    expect(user.valid?).to be false 
   end
 
   describe 'authenticate' do
