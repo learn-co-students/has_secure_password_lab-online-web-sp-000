@@ -1,6 +1,6 @@
 <h1>Login</h1>
-<%= form_for @user do |f|%>
-    Name: <%= f.text_field :name%><br>
-    Password: <%= f.text_field :password%><br>
-    <%= f.submit "Logon"%>
+<%= form_tag '/login' do %>
+    Name: <%= text_field_tag :name %><br>
+    Password: <%= text_field_tag :password %><br>
+    <%= submit_tag "Login"%>
 <%end%>
