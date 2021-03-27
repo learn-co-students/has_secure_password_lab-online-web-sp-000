@@ -1,0 +1,11 @@
+<h2>Login</h2>
+
+<%= form_for @user, url: '/login' do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %><br>
+
+    <%= f.submit "Login" %>
+<% end %>
