@@ -19,11 +19,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: session[:user_id])
-
-    if @user.id == session[:id] && params[:user][:id] == session[:id]
-      render "/users/show"
-    else
+    if @user.nil?
       redirect_to "/session/login"
+    elsif @user.id == session[:user_id]
+      render "/users/show"
     end
   end
 

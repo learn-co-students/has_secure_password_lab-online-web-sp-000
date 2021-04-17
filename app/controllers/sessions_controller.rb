@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-
+    render "/session/login"
   end
 
   def create
