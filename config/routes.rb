@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'users#hello'
-  get '/welcome' => 'users#hello'
-  get '/signup' => 'sessions#create'
-  post '/login' => 'users#create'
-  post '/logout' => 'users#destroy'
+  root 'users#welcome'
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  get '/welcome' => 'users#welcome'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
 end
 
 # root 'users#welcome'

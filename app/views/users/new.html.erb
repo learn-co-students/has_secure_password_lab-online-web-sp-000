@@ -1,5 +1,7 @@
+<%# set a flash message %>
 <%= form_tag ({controller: 'users', action: 'create', method: 'post'}) do %>
     <input name=name>
     <input password=password>
+    <input password=password_confirmation>
     <input type=submit value='signup'>
 <% end %>

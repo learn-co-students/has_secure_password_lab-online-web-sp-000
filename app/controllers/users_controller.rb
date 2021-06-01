@@ -1,29 +1,26 @@
 class UsersController < ApplicationController
 
     def new
-        # responsible for signup
-        @user = User.new(params[:user][:name])
-        @user.save
+        # responsible for signup form
     end
 
-    def create
-            @user = User.create(user_params)
-            session[:user_id] = @user.id
-            # byebug
-            if @user.authenticate(user_params)
-                # current_user = @user.id
-                #byebug
-                redirect_to root_path   
+    def create # if password and password confirmation don't match
+            # redirect_to signup_path unless params[:password] == params[:password_confirmation]
+            #     @user = User.new(user_params)
+            if params[:password] != params[:password_confirmation]
+                redirect_to controller: 'users', action: 'new'
             else
-                #byebug
-                redirect_to signup_path
+                @user = User.new(user_params)
+                if @user.save
+                    session[:user_id] = @user.id
+                    redirect_to root_path
+                end
             end
-        # responsible for logging in
-        # byebug
     end
 
     def welcome
-
+        @user = User.find_by(params[:user_id])
+        render :welcome
     end
 
     private
