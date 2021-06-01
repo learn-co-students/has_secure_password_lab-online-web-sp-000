@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use sqlite3 as the database for Active Record
