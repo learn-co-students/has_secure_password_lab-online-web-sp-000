@@ -6,12 +6,6 @@ class UsersController < ApplicationController
         @user.save
     end
 
-    # @user = User.find_by(name: params[:user][:name])
-    # # byebug
-    # return head(:forbidden) unless @user.authenticate(params[:user][:password])
-    # #byebug
-    # session[:user_id] = @user.id
-
     def create
             @user = User.create(user_params)
             session[:user_id] = @user.id
